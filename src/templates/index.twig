@@ -1,0 +1,17 @@
+{% include 'header.twig' %}
+
+<p><a href="{{ app.request.baseUrl ~ '/add' }}" class="btn"><b class="icon-pencil"></b> Share Your Thought</a></p>
+
+<div class="hero-unit">
+    <div class="row-fluid">
+        {%  for thought in thoughts %}
+            <blockquote>
+                <p>{{ thought.message }}</p>
+                <small>{{ thought.author }}</small>
+            </blockquote>
+            <hr>
+        {%  endfor %}
+    </div>
+</div>
+
+{% include 'footer.twig' %}

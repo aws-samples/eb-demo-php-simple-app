@@ -16,13 +16,7 @@
         <div class="container">
             <div class="hero-unit">
                 <h2>This is probably not what you were expecting.</h2>
-                <p>To enjoy the full features from the <code>version2</code> branch of the <code>opsworks-demo-php-simple-app</code> sample, you need to go to your OpsWorks stack and set your app's <strong>Document root</strong> to <strong>web</strong> and redeploy the app. Hurry back to see the real app at work!</p>
-                
-                <h3>Need more help?</h3>
-                <ul>
-                    <li>For info on how to deploy an app, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying Apps</a> in the docs.</li>
-                    <li>For more info on this sample and how it works, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/gettingstarted.walkthrough.phpapp.2.html">Step 2. Update the server application to a new version that uses a database</a>.</li>
-                </ul>
+                <p>To enjoy the full features from the <code>ebo-demo-php-simple-app</code> sample, you need to go to your Elastic Beanstlk environment, click Configuration and set your app's <strong>Document root</strong> to <strong>web</strong> and redeploy the app. Hurry back to see the real app at work!</p>
             </div>
         </div>
 

@@ -14,6 +14,8 @@ ADD . /var/www
 RUN  cd /var/www && /usr/bin/composer install
 
 # Configure apache
+RUN a2enmod rewrite
+RUN chown -R www-data:www-data /var/www
 ADD apache.conf /etc/apache2/sites-available/default
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data

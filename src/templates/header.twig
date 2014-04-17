@@ -22,7 +22,7 @@
 
       <h1>{{ title }}</h1>
 
-      {% if alert is defined %}
+      {% if (alert is defined) and (alert.type is defined) %}
         <div class="alert alert-{{ alert.type }}">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <strong>{{ alert.type|capitalize }}!</strong> {{ alert.message }}

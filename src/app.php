@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 // Setup the application
 $app = new Application();
+$app['debug'] = true;
 $app->register(new TwigServiceProvider, array(
     'twig.path' => __DIR__ . '/templates',
 ));

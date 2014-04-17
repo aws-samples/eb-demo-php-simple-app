@@ -10,10 +10,13 @@ RUN mv composer.phar /usr/bin/composer
 
 # Install app
 RUN rm -rf /var/www/*
-ADD . /var/www
+ADD web /var/www
+ADD src /var/www
+ADD composer.json /var/www
 RUN  cd /var/www && /usr/bin/composer install
 
-# Configure env
+# Configure apache
+ADD apache.conf /etc/apache2/sites-available/default
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2

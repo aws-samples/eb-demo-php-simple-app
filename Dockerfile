@@ -10,9 +10,7 @@ RUN mv composer.phar /usr/bin/composer
 
 # Install app
 RUN rm -rf /var/www/*
-ADD web /var/www
-ADD src /var/www
-ADD composer.json /var/www
+ADD . /var/www
 RUN  cd /var/www && /usr/bin/composer install
 
 # Configure apache

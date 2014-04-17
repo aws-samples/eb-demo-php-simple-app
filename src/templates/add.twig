@@ -1,6 +1,6 @@
 {% include 'header.twig' %}
 
-{%  if data %}<pre>{{ data }}</pre>{%  endif %}
+{%  if data is defined %}<pre>{{ data }}</pre>{%  endif %}
 
 <form action="{{ app.request.baseUrl ~ '/add' }}" method="post" class="form-horizontal" enctype="multipart/form-data">
   <div class="control-group">

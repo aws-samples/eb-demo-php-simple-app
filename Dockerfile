@@ -13,9 +13,14 @@ RUN rm -rf /var/www/*
 ADD . /var/www
 RUN  cd /var/www && /usr/bin/composer install
 
-# Configure logging
+# Configure env
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
+
+# Run as www-data
+USER www-data
 
 EXPOSE 80
 
-ENTRYPOINT ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
+CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]

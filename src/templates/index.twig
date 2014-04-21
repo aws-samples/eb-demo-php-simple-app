@@ -4,6 +4,7 @@
 
 <div class="hero-unit">
     <div class="row-fluid">
+      {% if (thoughts is defined) %}
         {%  for thought in thoughts %}
             <blockquote>
                 <p>{{ thought.message }}</p>
@@ -11,6 +12,7 @@
             </blockquote>
             <hr>
         {%  endfor %}
+      {%  endif %}
     </div>
 </div>
 

@@ -6,6 +6,7 @@ require __DIR__ . '/db-connect.php';
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 // Setup the application
 $app = new Application();
@@ -19,6 +20,13 @@ $app['db.table'] = DB_TABLE;
 $app['db.dsn'] = 'mysql:dbname=' . DB_NAME . ';host=' . DB_HOST;
 $app['db'] = $app->share(function ($app) {
     return new PDO($app['db.dsn'], DB_USER, DB_PASSWORD);
+});
+
+$app->error(function (\PDOException $e, $code) use ($app) {
+  $alert = array('type' => 'error', 'message' => 'Can\'t connect to database. If you launched this application with AWS Elastic Beanstalk, please go to your Environment\'s Configuration page in the AWS Management Console and click \'create a new RDS database\' in the Data Tier section.');
+  return $app['twig']->render('index.twig', array(
+      'alert'    => $alert
+  ));
 });
 
 // Handle the index page

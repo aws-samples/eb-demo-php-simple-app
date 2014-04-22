@@ -1,6 +1,15 @@
-# AWS OpsWorks PHP Demo App - "Share Your Thoughts"
+# Elastic Beanstalk + Docker PHP Demo App - "Share Your Thoughts"
 
-Directions on how to launch this sample message board app on AWS OpsWorks can be found in **Step 2** of the article:
-[Walkthrough: Deploy a web application and learn AWS OpsWorks basics](http://docs.aws.amazon.com/opsworks/latest/userguide/gettingstarted.walkthrough.phpapp.2.html).
+This demo app shows you how to run a simple PHP application inside a Docker Container on AWS Elastic Beanstalk.
 
-This demo app is also featured in a video called [AWS OpsWorks Overview and Demo](http://www.youtube.com/watch?v=cj_LoG6C2xk) on YouTube.
+## Run the App
+Follow the steps below to deploy the demo application to an Elastic Beanstalk Docker environment. Accept the default settings unless indicated otherwise in the steps below:
+
+1. Download the ZIP file from the [Releases section](https://github.com/awslabs/eb-demo-php-simple-app/releases) of this repository.
+2. Login to the [Elastic Beanstalk Management Console](https://console.aws.amazon.com/elasticbeanstalk)
+3. Click `Create New Application` and give your app a name and description
+4. Choose 'Docker' in the 'Predefined configuration' dropdown and click `Next`
+5. Upload the ZIP file downloaded in Step 1
+6. Choose 'Create an RDS DB Instance with this environment' in the 'Additional Resources' step
+7. Allocate 5GB of storage and provide a username and password for your database
+8. Review and launch the application

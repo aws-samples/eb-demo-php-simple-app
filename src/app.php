@@ -15,7 +15,7 @@ $app->register(new TwigServiceProvider, array(
 
 // Setup the database
 $app['db.table'] = DB_TABLE;
-$app['db.dsn'] = 'mysql:dbname=' . DB_NAME . ';host=' . DB_HOST;
+$app['db.dsn'] = 'mysql:dbname=' . DB_NAME . ';port=' . DB_PORT . ';host=' . DB_HOST;
 $app['db'] = $app->share(function ($app) {
     return new PDO($app['db.dsn'], DB_USER, DB_PASSWORD);
 });

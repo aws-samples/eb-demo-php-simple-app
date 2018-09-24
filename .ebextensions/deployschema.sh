@@ -1,4 +1,6 @@
 #!/bin/sh
+set -ex
+
 /usr/bin/mysql \
     -u $RDS_USERNAME \
     -p$RDS_PASSWORD \

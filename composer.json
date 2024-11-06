@@ -1,7 +1,7 @@
 {
     "require": {
         "silex/silex": "~1.0",
-        "twig/twig": "^1.8"
+        "twig/twig": "^3.11"
     },
     "minimum-stability": "dev"
 }
